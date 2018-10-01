@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "jest",
+    "test:debug": "node --inspect-brk node_modules/jest-cli/bin/jest",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },

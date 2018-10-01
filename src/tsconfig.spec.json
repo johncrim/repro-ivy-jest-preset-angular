@@ -7,13 +7,8 @@
       "jest",
       "jsdom",
       "node"
-    ]
-  },
-  "files": [
-    "polyfills.ts"
-  ],
-  "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
-  ]
+    ],
+    "sourceMap": false,
+    "inlineSourceMap": false
+  }
 }
