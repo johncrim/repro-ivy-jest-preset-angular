@@ -1,27 +1,15 @@
-# NgJest
+# Angular Jest starter project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+This is an Angular starter project using Jest, with support for debugging Jest tests in 2 javascript debuggers: Visual Studio Code and Chrome Developer Tools.
 
-## Development server
+This project was created using `ng new ng-jest`, then changes were made to use `[jest-preset-angular](https://github.com/thymikee/jest-preset-angular)`; and changes were made to enable VS Code debugging and Chrome debugging.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Debugging Jest tests in Visual Studio Code
 
-## Code scaffolding
+1. In VS Code, set breakpoints in a test file or in Angular code - for example, you can add a breakpoint in `app.component.spec.ts` and/or `app.component.ts`.
+2. Type `Ctrl+Shift+D` to view the Debug pane, then ensure that "Debug Jest Tests" is selected in the launch configuration.
+3. Hit the F5 key to start debugging.
+4. Wait for your breakpoint(s) to be hit.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Debugging Jest tests in Chrome
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
