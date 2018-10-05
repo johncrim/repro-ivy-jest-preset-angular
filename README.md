@@ -15,7 +15,7 @@ This project was created using `ng new ng-jest`, then changes were made to use [
 
 1. Run `yarn test:debug` - this runs node in debug mode, waiting for a Javascript debugger to be attached before continuing.
 2. Open a Chrome tab. Enter `chrome://inspect` in the URL bar.
-3. Wait for Chrome to find the Remote Target for your app. Click the "inspect" link to attach the debugger.
+3. Click the "Open dedicated DevTools for Node" link to attach the debugger.
 4. After the debugger window opens, switch to the "Sources" tab and click "Add folder to workspace", then add your project folder. Chrome Dev Tools will ask for permissions to access the folder, which you'll need to grant - click the "Allow" button.
 5. Browse to the typescript files for the test or Angular code that you want to debug, open the file(s), and add one or more breakpoints.
 6. Hit the F8 key to tell the debugger to continue running.
@@ -25,9 +25,11 @@ In Chrome there can be a mismatch between the javascript files being debugged an
 
 ## Troubleshooting Jest Debugging
 
-Jest caches things aggressively, and while there seems to be some automatic cache invalidation it doesn't work in all cases. Therefore, if changes don't seem to be picked up, run `yarn test --clearCache` to clear the Jest cache.
+Jest caches things aggressively, and while there seems to be some automatic cache invalidation it doesn't work in all cases - particularly changes to libraries or Jest configuration. Therefore, if changes don't seem to be picked up, run `yarn test --clearCache` to clear the Jest cache.
 
 The other [Jest CLI parameters](https://jestjs.io/docs/en/cli.html) can be used when running `yarn test` - they are passed directly to jest. For example, you can use `yarn test --debug` to display information about your Jest configuration.
 
 If your breakpoints aren't being hit, try adding a `debugger;` statement in the ts file where you want the debugger to break. This will trigger the debugger even if sourcemaps aren't working properly.
+
+For other ideas, see [Jest's Troubleshooting page](https://jestjs.io/docs/en/22.0/troubleshooting).
 

@@ -8,10 +8,14 @@
       "type": "node",
       "request": "launch",
       "name": "Debug Jest Tests",
-      "program": "${workspaceFolder}/node_modules/jest-cli/bin/jest",
-      "args": ["--runInBand"],
+      "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
+      "args": [
+        "--runInBand",
+        "--no-coverage" // Apparently coverage instrumentation can mess up source map debugging. Also slows things down.
+      ],
       "console": "integratedTerminal",
-      "internalConsoleOptions": "openOnSessionStart"
+      "internalConsoleOptions": "neverOpen",
+      "sourceMaps": true
     }
   ]
 }
