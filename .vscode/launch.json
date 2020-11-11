@@ -5,32 +5,58 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "node",
+      "name": "Launch Chrome against localhost (ng)",
+      "type": "chrome",
       "request": "launch",
-      "name": "Debug All Jest Tests",
-      "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
-      "args": [
-        "--runInBand",
-        "--no-coverage" // Apparently coverage instrumentation can mess up source map debugging. Also slows things down.
-      ],
-      "console": "integratedTerminal",
-      "internalConsoleOptions": "neverOpen",
-      "sourceMaps": true
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceFolder}/apps/ease"
     },
     {
+      "name": "Jest All",
       "type": "node",
       "request": "launch",
-      "name": "Debug Current Test",
-      "program": "${workspaceFolder}/node_modules/jest/bin/jest.js",
-      "args": [
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/node_modules/jest/bin/jest.js",
         "--runInBand",
-        "--no-coverage", // Apparently coverage instrumentation can mess up source map debugging. Also slows things down.
-        "--testPathPattern",
-        "${relativeFile}" // Debugs the current active test file
+        "--watch"
       ],
+      "port": 9229,
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
-      "sourceMaps": true
+      "disableOptimisticBPs": false,
+    },
+    {
+      "name": "Jest Current File",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "${workspaceRoot}/node_modules/jest/bin/jest.js",
+        "${fileBasenameNoExtension}",
+        "--runInBand",
+        "--config",
+        "jest.config.js",
+        "--watch"
+      ],
+      "port": 9229,
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": false,
+    },
+    {
+      "name": "Attach to Chrome (karma)",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "sourceMaps": true,
+      "webRoot": "${workspaceFolder}/libs/data-access",
+      "sourceMapPathOverrides": {
+        "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///*": "${webRoot}/*",
+        "./*": "${webRoot}/*"
+      }
     }
   ]
 }

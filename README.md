@@ -2,6 +2,9 @@
 
 This is an Angular starter project using Jest, with support for debugging Jest tests in 2 javascript debuggers: Visual Studio Code and Chrome Developer Tools.
 
+This starter project contains a single library (`ui-lib`), and no angular apps. It contains both Karma tests (`*.karma-spec.ts`) and Jest tests (`*.spec.ts`), but no
+Protractor or other e2e tests.
+
 This project was created using `ng new ng-jest`, then changes were made to use [`jest-preset-angular`](https://github.com/thymikee/jest-preset-angular); and changes were made to enable VS Code debugging and Chrome debugging. The git history for this project should show a minimal set of changes for adding this developer utility.
 
 ## Debugging Jest tests in Visual Studio Code
@@ -32,4 +35,3 @@ The other [Jest CLI parameters](https://jestjs.io/docs/en/cli.html) can be used 
 If your breakpoints aren't being hit, try adding a `debugger;` statement in the ts file where you want the debugger to break. This will trigger the debugger even if sourcemaps aren't working properly.
 
 For other ideas, see [Jest's Troubleshooting page](https://jestjs.io/docs/en/22.0/troubleshooting).
-
