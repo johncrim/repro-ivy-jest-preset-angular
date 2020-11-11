@@ -16,8 +16,7 @@
             "project": "libs/ui-lib/ng-package.json"
           },
           "configurations": {
-            "production": {
-            }
+            "production": {}
           }
         },
         "test": {
@@ -41,6 +40,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ui-lib"
 }
