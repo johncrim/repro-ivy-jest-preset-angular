@@ -1,17 +1,24 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../tsconfig.lib-common.json",
   "compilerOptions": {
-    "outDir": "../../out-tsc/karma-spec",
+    "target": "es5", // Support testing on IE and IOS 9
+    "outDir": "../../dist/out-tsc/libs/ui-lib/karma",
     "types": [
-      "jasmine"
+      "jest", /* Use jest instead of jasmine, b/c including @types/jasmine breaks jest compilation. */
+      "node"
     ]
   },
   "files": [
-    "src/test-karma.ts"
+    "./test/karma/test.ts"
   ],
   "include": [
+    "**/karma/**/*.ts",
     "**/*.karma-spec.ts",
     "**/*.d.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "node_modules",
+    "tmp",
   ]
 }

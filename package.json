@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "jest",
+    "karma": "ng test",
     "lint": "ng lint",
     "postinstall": "ngcc"
   },

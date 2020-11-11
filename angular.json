@@ -17,14 +17,13 @@
           },
           "configurations": {
             "production": {
-              "tsConfig": "libs/ui-lib/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "libs/ui-lib/src/test-karma.ts",
+            "main": "libs/ui-lib/test/karma/test.ts",
             "tsConfig": "libs/ui-lib/tsconfig.karma-spec.json",
             "karmaConfig": "libs/ui-lib/karma.conf.js"
           }
