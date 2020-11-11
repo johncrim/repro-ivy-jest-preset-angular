@@ -9,7 +9,7 @@
       "jest"
     ],
     "paths": {
-      "@ease/*": [
+      "@this/*": [
         "libs/*/src/public-api.ts"
       ]
     }

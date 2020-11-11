@@ -10,6 +10,11 @@
       "jest",
       "node"
     ],
+    "paths": {
+      "@this/*": [
+        "libs/*/src/public-api.ts"
+      ]
+    }
   },
   "include": [
     "**/*.spec.ts",

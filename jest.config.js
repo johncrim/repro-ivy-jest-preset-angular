@@ -35,5 +35,8 @@ module.exports = {
     '!**/setup-jest.ts',
     '!**/*.module.ts'
   ],
+  moduleNameMapper: {
+    '^@this/([a-z\\-\/]+)': '<rootDir>/libs/$1/src/public-api.ts'
+  },
   setupFilesAfterEnv: ['./test/setup-jest.ts']
 };

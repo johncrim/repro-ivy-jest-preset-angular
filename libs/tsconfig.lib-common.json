@@ -6,6 +6,9 @@
     "stripInternal": true,
     "types": [],
     "paths": {
+      "@this/*": [
+        "dist/*"
+      ]
     }
   },
   "angularCompilerOptions": {
