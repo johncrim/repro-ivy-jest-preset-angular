@@ -5,15 +5,26 @@
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
+    "importHelpers": true,
+    "moduleResolution": "node",
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
+    // Strict options
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
     "target": "es2015",
     "module": "es2020",
+    "types": [
+      "tslib"
+    ],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "lib": [
-      "es2018",
-      "dom"
+      "dom",
+      "es2020"
     ],
     "paths": {
       "ui-lib": [
@@ -21,5 +32,15 @@
         "dist/ui-lib"
       ]
     }
-  }
+  },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "strictTemplates": true,
+    "strictInjectionParameters": true,
+    "fullTemplateTypeCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ],
 }
