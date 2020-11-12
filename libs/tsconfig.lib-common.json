@@ -2,7 +2,7 @@
   "extends": "../tsconfig.base.json",
   "compilerOptions": {
     "declaration": true,
-    "inlineSources": true,
+    "inlineSources": false,
     "stripInternal": true,
     "types": [],
     "paths": {
