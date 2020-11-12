@@ -16,35 +16,29 @@ import { expandoPanelAnimations } from './expando.animations';
     'style': 'display:block; overflow:hidden'
   }
 })
-export class ExpandoPanelComponent
-  extends DisableableDirective {
+export class ExpandoPanelComponent {
 
   @Input()
   public expanded = false;
 
   constructor(
-    elementRef: ElementRef<HTMLElement>,
     private _changeDetector: ChangeDetectorRef
-  ) {
-    super(elementRef);
-  }
+  ) { }
 
   public toggle() {
-    if (!super.disabled) {
-      this.expanded = !(this.expanded);
-      this._changeDetector.markForCheck();
-    }
+    this.expanded = !(this.expanded);
+    this._changeDetector.markForCheck();
   }
 
   public expand() {
-    if (!super.disabled && !this.expanded) {
+    if (!this.expanded) {
       this.expanded = true;
       this._changeDetector.markForCheck();
     }
   }
 
   public collapse() {
-    if (!super.disabled && this.expanded) {
+    if (this.expanded) {
       this.expanded = false;
       this._changeDetector.markForCheck();
     }

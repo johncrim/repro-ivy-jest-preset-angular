@@ -40,19 +40,22 @@ describe('ui-expando-panel', () => {
     fixture.detectChanges();
   });
 
+  it('panel should be hidden by default', () => {
+    expect(component.expanded).toBe(false);
+
+    const panelDiv = fixture.debugElement.query(By.css('div'));
+    expect(panelDiv).toBe(null);
+  });
+
   it('should expand on toggle', waitForAsync(() => {
     expect(component.expanded).toBe(false);
 
     fixture.debugElement.query(By.css('button')).nativeElement.click();
     expect(component.expanded).toBe(true);
-  }));
+    fixture.detectChanges();
 
-  it('does not toggle when disabled', waitForAsync(() => {
-    expect(component.expanded).toBe(false);
-    component.disabled = true;
-
-    fixture.debugElement.query(By.css('button')).nativeElement.click();
-    expect(component.expanded).toBe(false);
+    const panelDiv = fixture.debugElement.query(By.css('div'));
+    expect(panelDiv.nativeElement.innerHTML).toContain('Panel content here.');
   }));
 
 });
