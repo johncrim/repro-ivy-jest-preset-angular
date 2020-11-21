@@ -27,9 +27,8 @@
       "es2020"
     ],
     "paths": {
-      "ui-lib": [
-        "dist/ui-lib/ui-lib",
-        "dist/ui-lib"
+      "@this/ui-lib/*": [
+        "dist/ui-lib/*"
       ]
     }
   },
