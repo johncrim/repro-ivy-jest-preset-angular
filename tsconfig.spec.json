@@ -2,23 +2,20 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./dist/out-tsc/spec",
-    "module": "commonjs",
     "allowJs": true,
+    "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "types": [
-      "tslib",
-      "jest",
-      "node"
+      "jest"
     ],
     "paths": {
       "@this/*": [
-        "libs/*/src/public-api.ts"
+        "dist/*"
       ]
     }
   },
   "include": [
-    "**/*.spec.ts",
-    "**/*.d.ts"
+    "**/*.spec.ts"
   ],
   "exclude": [
     "node_modules",

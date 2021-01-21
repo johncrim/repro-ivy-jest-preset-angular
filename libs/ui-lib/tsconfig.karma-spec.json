@@ -1,7 +1,8 @@
 {
   "extends": "../tsconfig.lib-common.json",
   "compilerOptions": {
-    "target": "es5", // Support testing on IE and IOS 9
+    "target": "es2015",
+    "module": "es2020",
     "outDir": "../../dist/out-tsc/libs/ui-lib/karma",
     "types": [
       "jest", /* Use jest instead of jasmine, b/c including @types/jasmine breaks jest compilation. */
@@ -13,8 +14,7 @@
   ],
   "include": [
     "**/karma/**/*.ts",
-    "**/*.karma-spec.ts",
-    "**/*.d.ts"
+    "../../test-cases/**/*.karma-spec.ts"
   ],
   "exclude": [
     "**/*.spec.ts",

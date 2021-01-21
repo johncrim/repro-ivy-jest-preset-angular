@@ -1,11 +1,12 @@
 {
   "editor.tabSize": 2,
   "editor.wordWrapColumn": 150,
+  "files.eol": "\n",
   "emmet.preferences": {
     "css.autoInsertVendorPrefixes": false
   },
   "html.format.wrapAttributes": "preserve-aligned",
-  "javascript.implicitProjectConfig.experimentalDecorators": true,
+  "ts.implicitProjectConfig.experimentalDecorators": true,
 
   "editor.wordWrap": "on"
 }

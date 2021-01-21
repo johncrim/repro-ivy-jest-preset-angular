@@ -16,6 +16,7 @@
       "type": "node",
       "request": "launch",
       "runtimeArgs": [
+        "--experimental-vm-modules",
         "--inspect-brk",
         "${workspaceRoot}/node_modules/jest/bin/jest.js",
         "--runInBand",
@@ -31,6 +32,7 @@
       "type": "node",
       "request": "launch",
       "runtimeArgs": [
+        "--experimental-vm-modules",
         "--inspect-brk",
         "${workspaceRoot}/node_modules/jest/bin/jest.js",
         "${fileBasenameNoExtension}",

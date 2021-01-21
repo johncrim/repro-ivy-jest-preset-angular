@@ -1,13 +1,18 @@
+require('jest-preset-angular/ngcc-jest-processor');
+
 module.exports = {
-  preset: 'jest-preset-angular',
+  preset: 'jest-preset-angular/presets/defaults-esm',
   globals: {
+    'ts-jest': {
+      isolatedModules: true,
+    }
   },
   testMatch: [
     "**/__tests__/**/*.+(ts|js)?(x)",
     "**/+(*.)+(spec|test).+(ts|js)?(x)"
   ],
   cacheDirectory: './.jest-cache',
-  roots: ['<rootDir>/apps/', '<rootDir>/libs/'],
+  roots: ['<rootDir>/apps/', '<rootDir>/libs/', '<rootDir>/test-cases/'],
   reporters: [
     'default',
     // ['jest-junit', {
@@ -27,7 +32,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/environments/**',
     '!**/test.ts',
-    '!**/karma-spec.ts',
+    '!**/*.karma-spec.ts',
     '!**/index.ts',
     '!**/public-api.ts',
     '!**/polyfills.ts',
@@ -36,7 +41,11 @@ module.exports = {
     '!**/*.module.ts'
   ],
   moduleNameMapper: {
-    '^@this/([a-z\\-\/]+)': '<rootDir>/libs/$1/src/public-api.ts'
+    // Old form loads umd modules, eg:
+    '^@this/(.*)$': '<rootDir>/dist/$1'
+    // Required to load fesm2015
+    // '^@this/([a-z\\-]+)/([a-z\\-]+)$': '<rootDir>/dist/$1/fesm2015/this-$1-$2.js',
+    // '^@this/([a-z\\-]+)': '<rootDir>/dist/$1/fesm2015/this-$1.js'
   },
   setupFilesAfterEnv: ['./test/setup-jest.ts']
 };

@@ -3,6 +3,6 @@
     "lib": {
       "entryFile": "src/public-api.ts"
     },
-    "dest": "@this/ui-lib/expando"
+    "dest": "@this/ui-lib/derived"
   }
 }

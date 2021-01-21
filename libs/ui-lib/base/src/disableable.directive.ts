@@ -1,38 +1,27 @@
 import { Directive, ElementRef, Input } from '@angular/core';
 
 /**
- * A base class for components that can be disabled, and that store their disabled
- * state in the HTML element. This prevents the HTML element from being focused or clicked,
- * and can be used for CSS selectors.
+ * A base class for components that can be disabled.
  */
 @Directive()
 export abstract class DisableableDirective {
 
-  /** Binds to the HTML disabled property OR disabled attribute, if present. */
+  private _disabled = false;
+
   @Input()
   public set disabled(v: boolean) {
-    const elt = this.getNativeElement();
-    const disabledProp = (elt as any).disabled;
-    if (typeof (disabledProp) === 'boolean') {
-      // Set disabled property
-      (elt as any).disabled = v;
-      return;
-    }
 
-    // Set disabled attribute
-    elt.setAttribute('disabled', v.toString());
+    // Trace statement just to dump the call stack in Jest - allows us to see whether UMD or other formats are used.
+    console.trace({ disabledDirective: this });
+
+    this._disabled = v;
   }
   public get disabled(): boolean {
-    const elt = this.getNativeElement();
-    const disabledProp = (elt as any).disabled;
-    if (typeof (disabledProp) === 'boolean') {
-      return disabledProp;
-    }
-    const disabledAttr = elt.getAttribute('disabled');
-    return disabledAttr === 'true';
+    return this._disabled;
   }
 
-  constructor(private _elementRef: ElementRef<HTMLElement>) { }
+  constructor(private _elementRef: ElementRef<HTMLElement>) {
+  }
 
   public getNativeElement() {
     return this._elementRef.nativeElement;
