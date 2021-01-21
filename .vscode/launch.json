@@ -9,7 +9,7 @@
       "type": "chrome",
       "request": "launch",
       "url": "http://localhost:4200",
-      "webRoot": "${workspaceFolder}/apps/ease"
+      "webRoot": "${workspaceFolder}/"
     },
     {
       "name": "Jest All",
@@ -50,7 +50,7 @@
       "request": "attach",
       "port": 9222,
       "sourceMaps": true,
-      "webRoot": "${workspaceFolder}/libs/data-access",
+      "webRoot": "${workspaceFolder}/",
       "sourceMapPathOverrides": {
         "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
         "webpack:///./*": "${webRoot}/*",
