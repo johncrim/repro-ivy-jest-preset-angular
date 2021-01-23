@@ -1,0 +1,4 @@
+{ // tsconfig inherited by 'tsconfig.json' files in each project, used for
+  // code editing/intellisense, etc.
+  "extends": "./tsconfig.vscode.json"
+}

@@ -25,8 +25,15 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    browsers: ['ChromeDebugging'], // 'ChromeHeadless', 'ChromeDebugging', 'Chrome'
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    customLaunchers: {
+      ChromeDebugging: {
+        base: 'Chrome',
+        // Explicitly specified to launch chrome in Debug mode
+        flags: ['--remote-debugging-port=9223']
+      }
+    },
   });
 };

@@ -50,7 +50,7 @@
       "name": "Attach to Chrome (karma)",
       "type": "chrome",
       "request": "attach",
-      "port": 9222,
+      "port": 9223,
       "sourceMaps": true,
       "webRoot": "${workspaceFolder}/",
       "sourceMapPathOverrides": {

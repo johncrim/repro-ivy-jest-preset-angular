@@ -1,4 +1,5 @@
-require('jest-preset-angular/ngcc-jest-processor');
+// Commented out, b/c ngcc is run during postinstall step
+// require('jest-preset-angular/ngcc-jest-processor');
 
 module.exports = {
   preset: 'jest-preset-angular/presets/defaults-esm',
