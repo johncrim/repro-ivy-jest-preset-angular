@@ -37,8 +37,6 @@
         "${workspaceRoot}/node_modules/jest/bin/jest.js",
         "${fileBasenameNoExtension}",
         "--runInBand",
-        "--config",
-        "jest.config.js",
         "--watch"
       ],
       "port": 9229,

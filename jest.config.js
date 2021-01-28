@@ -4,9 +4,9 @@ require('jest-preset-angular/ngcc-jest-processor');
 module.exports = {
   preset: 'jest-preset-angular/presets/defaults-esm',
   globals: {
-    'ts-jest': {
-      isolatedModules: true,
-    }
+    // 'ts-jest': {
+    //   isolatedModules: true,
+    // }
   },
   testMatch: [
     "**/__tests__/**/*.+(ts|js)?(x)",
@@ -20,6 +20,9 @@ module.exports = {
     //   outputDirectory: 'dist/test/junit/jest',
     //   outputName: 'jest-junit.xml',
     // }]
+  ],
+  watchPathIgnorePatterns: [
+    '<rootDir>/node_modules'
   ],
   // transform: {
   //   '^.+\\.(ts|js|html)$': '<rootDir>/node_modules/jest-preset-angular/preprocessor.js'

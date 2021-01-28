@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js",
+    "test:watch": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --watch",
     "karma": "ng test",
     "karma:single": "ng test --watch=false",
     "lint": "ng lint",
