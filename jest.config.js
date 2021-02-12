@@ -2,7 +2,7 @@
 require('jest-preset-angular/ngcc-jest-processor');
 
 module.exports = {
-  preset: 'jest-preset-angular/presets/defaults-esm',
+  preset: 'jest-preset-angular/presets/defaults',
   globals: {
     // 'ts-jest': {
     //   isolatedModules: true,
@@ -45,8 +45,10 @@ module.exports = {
     '!**/*.module.ts'
   ],
   moduleNameMapper: {
+    // Loads directly from source
+    '^@this/(.*)$': '<rootDir>/libs/$1/src/public-api.ts', // <-- works, too slow!
     // Old form loads umd modules, eg:
-    '^@this/(.*)$': '<rootDir>/dist/$1'
+    // '^@this/(.*)$': '<rootDir>/dist/$1'
     // Required to load fesm2015
     // '^@this/([a-z\\-]+)/([a-z\\-]+)$': '<rootDir>/dist/$1/fesm2015/this-$1-$2.js',
     // '^@this/([a-z\\-]+)': '<rootDir>/dist/$1/fesm2015/this-$1.js'

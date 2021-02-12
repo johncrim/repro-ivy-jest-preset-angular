@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { DerivedComponent } from '@this/ui-lib/derived';
 
 // Skipped on this branch
-xdescribe('A component that subclasses a base class in another sub-module', () => {
+describe('A component that subclasses a base class in another sub-module', () => {
 
   // This test fails when DerivedComponent and DisableableDirective are imported from UMD modules
   it('Base class properties can be overridden', () => {
