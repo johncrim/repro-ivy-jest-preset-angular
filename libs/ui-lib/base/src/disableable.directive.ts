@@ -12,7 +12,7 @@ export abstract class DisableableDirective {
   public set disabled(v: boolean) {
 
     // Trace statement just to dump the call stack in Jest - allows us to see whether UMD or other formats are used.
-    console.trace({ disabledDirective: this });
+    console.trace(`Setting disabled: ${v}`);
 
     this._disabled = v;
   }

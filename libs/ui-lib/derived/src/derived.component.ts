@@ -33,6 +33,7 @@ export class DerivedComponent
 
   constructor(elementRef: ElementRef<HTMLElement>) {
     super(elementRef);
+    console.warn('Creating DerivedComponent');
   }
 
   ngOnDestroy() {
